@@ -1,0 +1,54 @@
+.nav {
+  background-color: #f8f9fa;
+  padding: 1rem 0;
+}
+.nav .container {
+  max-width: 1200px; /* Define un ancho máximo similar al del contenido principal */
+}
+
+/* Aseguramos que el logo se centre en pantallas pequeñas y esté alineado a la izquierda en pantallas más grandes */
+.nav_logo {
+  text-align: center;
+}
+
+.nav_title h1 {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+
+.navbar-nav {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.navbar-nav .nav-item {
+  margin-right: 1rem;
+}
+
+
+
+  
+  @media (max-width: 768px) {   // punto ruptura < 768px
+
+    //.nav__list {
+    //  flex-direction: column;
+    //}
+    //.nav_title {
+    //  font-size: 1.5rem;
+    //}
+  }
+  
+  @media  (min-width : 768px) and (max-width : 1024px) {  // punto ruptura 768px - 1024px
+   // .nav_title {
+   //   font-size: 1.2rem;
+   // }
+  }
+  
+    @media  (min-width : 1024px)  {  // punto ruptura > 1024px
+     // .nav_title {
+     //   font-size: 2.0rem;
+     // }
+  }

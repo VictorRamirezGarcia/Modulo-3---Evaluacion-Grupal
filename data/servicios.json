@@ -1,0 +1,17 @@
+[
+    {
+    "nombre": "Toma Muestras",
+    "descripcion":"Realizamos análisis de sangre, orina y otros exámenes clínicos de manera rápida y eficiente.",
+    "foto":""
+    },
+    {
+    "nombre": "Urgencia",
+    "descripcion": "Atención inmediata en casos de urgencias menores, con cirugía ambulatoria si es necesario",
+    "foto":""
+    },
+    {
+    "nombre": "Ambulatorio",
+    "descripcion":"Recibe atención médica general con nuestros doctores altamente capacitados.",
+    "foto":""
+    }
+  ]

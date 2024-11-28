@@ -1,0 +1,75 @@
+// Variables
+$primary-color: rgb(33, 5, 245); // Color principal
+$secondary-color: rgb(5, 245, 21); // Color principal
+$font-stack: 'Arial', sans-serif; // Fuente
+$background-color: #fcfcfc; // Color de fondo
+
+// Mixies del Main
+@mixin borderX($px, $tipo, $color) {
+  border: $px $tipo $color;
+  }
+
+// Estilos globales
+.main {
+  width: 90%;
+  background-color: $background-color; // Color de fondo
+  font-family: $font-stack; // Fuente del cuerpo
+  color: $primary-color; // Color del texto
+  font-family: $font-stack;
+  
+  .main__section {
+    
+    background-color:$background-color;
+    margin:20px;
+    //border: 4px dotted $primary-color;
+    @include borderX(4px, dotted, $primary-color);
+    padding:20px;
+    position: relative;
+  }
+  .main__title {
+    //border: 4px dotted $secondary-color;
+    @include borderX(4px, dotted, $secondary-color);
+  }
+
+  // Estilo para los encabezados dentro del body
+  h1 {
+    color: $primary-color; // Color de los encabezados
+  }
+
+  h2, h3 {
+    color: $secondary-color; // Color de los encabezados
+  }
+ 
+  // Estilo para los enlaces
+  a {
+    color: $primary-color; // Color de los enlaces
+    text-decoration: none; // Sin subrayado
+  }
+}
+
+@media (max-width: 768px) {   // punto ruptura < 768px
+  .main__section
+  {
+    width: 1.2rem;
+  }
+}
+
+@media  (min-width : 768px) and (max-width : 1024px) {  // punto ruptura 768px - 1024px
+  .main__section
+  {
+    width: 1.5rem;
+  }
+}
+
+  @media  (min-width : 1024px)  {  // punto ruptura > 1024px
+    .main__section
+    {
+      width: 2.0rem;
+    }
+}
+
+
+
+
+
+

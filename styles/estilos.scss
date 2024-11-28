@@ -1,0 +1,49 @@
+@import "abstracts/funtions";
+@import "abstracts/variables";
+@import "abstracts/mixins";
+@import "abstracts/helpers";
+
+@import "base/animations";
+@import "base/base";
+@import "base/typography";
+@import "base/utilities";
+
+@import "components/buttons";
+@import "components/carousel";
+@import "components/dropdown";
+@import "components/modal";
+
+@import "layout/footer";
+@import "layout/header";
+@import "layout/main";
+@import "layout/navbar";
+
+@import "pages/contacto";
+@import "pages/equipo";
+@import "pages/home";
+
+@import "themes/theme";
+@import "themes/admin";
+
+@import "vendors/boostrap";
+@import "vendors/jquery-ui";
+
+//@import "components/header";
+//@import "components/main";
+//@import "components/footer"; 
+
+/////////////////////////////////////////
+///  Patron de Colores
+/////////////////////////////////////////
+$Principal: #0d6efd ;
+
+/////////////////////////////////////////
+///  Modificando variables de Boostrap
+/////////////////////////////////////////
+/// original color $blue:    #0d6efd   #d21496;
+$primary:$Principal;
+$enable-rounded:true;
+$enable-shadows:true;
+$enable-gradients:true;
+
+@import "../lib/bootstrap/scss/bootstrap";

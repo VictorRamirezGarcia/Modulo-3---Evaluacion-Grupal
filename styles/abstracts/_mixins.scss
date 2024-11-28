@@ -1,0 +1,4 @@
+// Mixies del Main
+@mixin borderX($px, $tipo, $color) {
+    border: $px $tipo $color;
+    }

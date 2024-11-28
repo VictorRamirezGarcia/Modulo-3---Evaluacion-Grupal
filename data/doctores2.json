@@ -1,0 +1,70 @@
+[
+  {
+    "nombre": "Dr. Victor Retamal",
+    "especialidad": "Medicina General",
+    "anos_experiencia": 6,
+    "disponibilidad": {
+      "lunes": "08:00 - 12:00",
+      "martes": "08:00 - 12:00",
+      "miercoles": "08:00 - 12:00",
+      "jueves": "08:00 - 12:00",
+      "viernes": "08:00 - 12:00"
+    },
+    "contacto": {
+      "telefono": "555-1234",
+      "email": "dr.victor@hospital.com"
+    },
+    "foto": "img/drvictor.png"
+  },
+  {
+    "nombre": "Dra. Claudia Villagran",
+    "especialidad": "Cardiologia",
+    "anos_experiencia": 4,
+    "disponibilidad": {
+      "lunes": "09:00 - 13:00",
+      "martes": "09:00 - 13:00",
+      "miercoles": "09:00 - 13:00",
+      "jueves": "09:00 - 13:00",
+      "viernes": "09:00 - 13:00"
+    },
+    "contacto": {
+      "telefono": "555-5678",
+      "email": "dra.claudia@hospital.com"
+    },
+    "foto": "img/drclaudia.png"
+  },
+  {
+    "nombre": "Dra. Sofia Saavedra",
+    "especialidad": "Geriatría",
+    "anos_experiencia": 7,
+    "disponibilidad": {
+      "lunes": "10:00 - 14:00",
+      "martes": "10:00 - 14:00",
+      "miercoles": "10:00 - 14:00",
+      "jueves": "10:00 - 14:00",
+      "viernes": "10:00 - 14:00"
+    },
+    "contacto": {
+      "telefono": "555-9101",
+      "email": "dra.sofia@hospital.com"
+    },
+    "foto": "img/drsofia.png"
+  },
+  {
+    "nombre": "Dra. Karen Alvear",
+    "especialidad": "Pediatria",
+    "anos_experiencia": 3,
+    "disponibilidad": {
+      "lunes": "11:00 - 15:00",
+      "martes": "11:00 - 15:00",
+      "miercoles": "11:00 - 15:00",
+      "jueves": "11:00 - 15:00",
+      "viernes": "11:00 - 15:00"
+    },
+    "contacto": {
+      "telefono": "555-1122",
+      "email": "dra.karen@hospital.com"
+    },
+    "foto": "img/drkaren.png"
+  }
+]

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página Hospital Clínico Dr. Victor Ramirez</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="styles/estilos.css">
+
+</head>
+<body>
+
+  <!-- Barra de navegación -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <img src="img/logitohospital.png" alt="Logotipo del Hospital" width="60" height="60" />
+      </a>
+      <a class="navbar-brand ms-3" href="#">Hospital Clínico Dr. Victor Ramirez</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="index2.html">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="equipo2.html">Equipo</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contacto2.html">Contacto</a>
+          </li>
+          <li class="nav-item">
+            <form id="cita-form">
+                <button class="btn btn-primary" type="submit">Reservar Cita</button>
+              </form>
+          </li>
+        </ul>
+        <form class="d-flex ms-3">
+          <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Buscar</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+<!-- Contenido principal -->
+ 
+<div class="container my-5 text-center">
+    <h1 class="display-4 mb-3">Somos un gran equipo comprometido con tu salud...</h1>
+    <p class="lead mb-5">Como equipo médico estamos comprometidos con su salud y bienestar familiar. Ponemos todos los días lo mejor de nosotros para apoyarlos y resolver cada uno de sus requerimientos de salud.</p>
+    
+    <!-- Listado de equipo médico -->
+    <div class="container my-5 text-center">
+      <h1 class="display-4 mb-3">Listado Equipo Medico</h1>
+      <div id="doctor-info" class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+        <!-- Aquí se mostrará la información del doctor -->
+      </div>
+    </div>
+  
+</div>
+
+
+  <!-- Footer -->
+  <footer class="bg-light py-4">
+    <div class="container text-center">
+      <p class="mb-2">&copy; 2024 Curso Front-End</p>
+      <ul class="list-unstyled d-flex justify-content-center mb-0">
+        <li><a class="btn btn-link text-dark" href="/acerca-de">Acerca de</a></li>
+        <li class="mx-3"><a class="btn btn-link text-dark" href="/conectar">Conectar</a></li>
+        <li><a class="btn btn-link text-dark" href="/rrss">Redes Sociales</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS and dependencies -->
+  <!-- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script> -->
+  <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script> -->
+  <script src="lib/bootstrap/dist/js/bootstrap.min.js" ></script>
+  <!-- <script src="data/doctores.js"></script> -->
+  <!-- <script src="js/equipo.js"></script>-->
+  <!-- <script src="data/doctores2.json"></script>-->
+  <script src="js/equipo2.js"></script>
+  <script src="js/reservar_cita.js"></script>
+  <!-- <script src="js/ejercicioLab1.js"></script> -->
+</body>
+</html>

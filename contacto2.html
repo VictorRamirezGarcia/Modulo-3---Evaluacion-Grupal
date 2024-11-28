@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+  <title>Página Hospital Clínico Dr. Victor Ramirez</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="styles/estilos.css">
+  
+</head>
+<body>
+
+  <!-- Barra de navegación -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <img src="img/logitohospital.png" alt="Logotipo del Hospital" width="60" height="60" />
+      </a>
+      <a class="navbar-brand ms-3" href="#">Hospital Clínico Dr. Victor Ramirez</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="index2.html">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="equipo2.html">Equipo</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contacto2.html">Contacto</a>
+          </li>
+          <li class="nav-item">
+            <form id="cita-form">
+                <button class="btn btn-primary" type="submit">Reservar Cita</button>
+              </form>
+          </li>
+        </ul>
+        <form class="d-flex ms-4">
+          <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Buscar</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- Contenido Principal -->
+  <div class="main container my-5">
+    <div class="row">
+      <!-- Formulario de contacto -->
+      <div class="col-md-6 mb-4">
+        <h2 class="display-4 mb-3">Formulario de Contacto</h2>
+        <form id="contact-form">
+          <div class="form-group mb-4">
+            <label for="nombre">Nombre completo:</label>
+            <input type="text" class="form-control" id="nombre" name="nombre" required>
+          </div>
+          <div class="form-group mb-3">
+            <label for="correo">Correo electrónico:</label>
+            <input type="email" class="form-control" id="correo" name="correo" required>
+          </div>
+          <div class="form-group mb-3">
+            <label for="telefono">Teléfono:</label>
+            <input type="tel" class="form-control" id="telefono" name="telefono" required>
+          </div>
+          <div class="form-group mb-3">
+            <button type="submit" class="btn btn-primary w-100">Enviar</button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Mapa de ubicación -->
+      <div class="col-md-6 mb-4">
+        <h2 class="display-4 mb-4">Mapa Ubicación</h2>
+        <section>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d51245.07064547779!2d-72.13834542089839!3d-36.606718300000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9668d7d7adad289d%3A0x6bc898701d5885c4!2sPlaza%20de%20Armas%20de%20Chill%C3%A1n!5e0!3m2!1ses!2scl!4v1729470308816!5m2!1ses!2scl"
+            width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </section>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer bg-light text-center py-4 mt-5">
+    <p class="footer__title mb-3">&copy; 2024 Curso Front-End</p>
+    <ul class="footer__list list-unstyled d-flex justify-content-center mb-0">
+      <li class="footer__item"><a class="footer__link btn btn-link text-dark" href="/acerca-de">Acerca de</a></li>
+      <li class="footer__item mx-3"><a class="footer__link btn btn-link text-dark" href="/conectar">Conectar</a></li>
+      <li class="footer__item"><a class="footer__link btn btn-link text-dark" href="/rrss">Redes Sociales</a></li>
+    </ul> 
+  </footer>
+
+  <!-- Bootstrap JS and dependencies -->
+  <!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>-->
+  <script src="lib/bootstrap/dist/js/bootstrap.min.js" ></script>
+  <script src="js/contacto.js"></script>
+  <script src="js/reservar_cita.js"></script>
+  <!-- <script src="js/ejercicioLab1.js"></script>-->
+  <script src="js/programacion_funcional.js"></script>
+  <script src="js/programacion_eventos_asincrona.js"></script>
+  <script src="js/programacion_orientada_objetos.js"></script>
+</body>
+</html>

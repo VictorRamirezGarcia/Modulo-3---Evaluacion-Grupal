@@ -1,0 +1,42 @@
+// Estilos globales
+.main {
+    background-color: $background-color; // Color de fondo
+    font-family: $font-stack; // Fuente del cuerpo
+    color: $primary-color; // Color del texto
+    font-family: $font-stack;
+    
+    .main__section {
+      width: 100%;
+      background-color:$background-color;
+      margin:20px;
+      //border: 4px dotted $primary-color;
+      @include borderX(4px, dotted, $primary-color);
+      padding:20px;
+      position: relative;
+    }
+    .main__title {
+      //border: 4px dotted $secondary-color;
+      @include borderX(4px, dotted, $secondary-color);
+    }
+  
+    // Estilo para los encabezados dentro del body
+    h1 {
+      color: $primary-color; // Color de los encabezados
+    }
+  
+    h2, h3 {
+      color: $secondary-color; // Color de los encabezados
+    }
+   
+    // Estilo para los enlaces
+    a {
+      color: $primary-color; // Color de los enlaces
+      text-decoration: none; // Sin subrayado
+  
+      // Estilo para el hover
+      &:hover {
+        text-decoration: underline; // Subrayar en hover
+      }
+    }
+  }
+  
