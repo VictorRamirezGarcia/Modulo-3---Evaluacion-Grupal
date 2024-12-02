@@ -1,0 +1,92 @@
+[
+  {
+    "id": 1,
+    "dia": "2024-12-01",
+    "hora": "08:30 AM",
+    "especialidad": 1,
+    "doctor": 1,
+    "estado": 1,
+    "pacienteRut": "12.345.678-9"
+  },
+  {
+    "id": 2,
+    "dia": "2024-12-01",
+    "hora": "09:00 AM",
+    "especialidad": 4,
+    "doctor": 2,
+    "estado": 1,
+    "pacienteRut": "23.456.789-0"
+  },
+  {
+    "id": 3,
+    "dia": "2024-12-01",
+    "hora": "10:00 AM",
+    "especialidad": 5,
+    "doctor": 3,
+    "estado": 1,
+    "pacienteRut": "34.567.890-1"
+  },
+  {
+    "id": 4,
+    "dia": "2024-12-02",
+    "hora": "11:00 AM",
+    "especialidad": 6,
+    "doctor": 4,
+    "estado": 1,
+    "pacienteRut": "01.234.567-8"
+  },
+  {
+    "id": 5,
+    "dia": "2024-12-02",
+    "hora": "12:30 PM",
+    "especialidad": 7,
+    "doctor": 5,
+    "estado": 1,
+    "pacienteRut": "90.123.456-7"
+  },
+  {
+    "id": 6,
+    "dia": "2024-12-03",
+    "hora": "09:30 AM",
+    "especialidad": 3,
+    "doctor": 6,
+    "estado": 1,
+    "pacienteRut": "89.012.345-6"
+  },
+  {
+    "id": 7,
+    "dia": "2024-12-03",
+    "hora": "10:30 AM",
+    "especialidad": 8,
+    "doctor": 7,
+    "estado": 1,
+    "pacienteRut": "78.901.234-5"
+  },
+  {
+    "id": 8,
+    "dia": "2024-12-04",
+    "hora": "08:00 AM",
+    "especialidad": 4,
+    "doctor": 8,
+    "estado": 1,
+    "pacienteRut": "67.890.123-4"
+  },
+  {
+    "id": 9,
+    "dia": "2024-12-04",
+    "hora": "02:00 PM",
+    "especialidad": 9,
+    "doctor": 1,
+    "estado": 1,
+    "pacienteRut": "56.789.012-3"
+  },
+  {
+    "id": 10,
+    "dia": "2024-12-05",
+    "hora": "11:30 AM",
+    "especialidad": 6,
+    "doctor": 2,
+    "estado": 1,
+    "pacienteRut": "45.678.901-2"
+  }
+]

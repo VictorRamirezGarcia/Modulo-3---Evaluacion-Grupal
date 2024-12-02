@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Doctores</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/estilos.css">
+    <style>
+        .doctor-lista { margin-top: 20px; }
+        .doctor-card { margin-bottom: 20px; }
+        .doctor-info { margin-top: 10px; font-size: 14px; }
+        .doctor-info strong { color: #007bff; }
+        .doctor-form { max-width: 500px; margin: 0 auto; padding: 20px; background-color: #f9f9f9; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); }
+    </style>
+</head>
+<body>
+
+<!-- Barra de navegación -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+    <div class="container">
+        <a class="navbar-brand" href="#">
+            <img src="img/logitohospital.png" alt="Logotipo del Hospital" width="60" height="60" />
+        </a>
+        <a class="navbar-brand ms-3" href="#">Hospital Clínico Dr. Victor Ramirez</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link active" href="index2.html">Inicio</a></li>
+                <li class="nav-item"><a class="nav-link" href="equipo2.html">Equipo</a></li>
+                <li class="nav-item"><a class="nav-link" href="contacto2.html">Contacto</a></li>
+                <li class="nav-item"><a class="nav-link" href="citas.html">Gestion Citas</a></li>
+                <li class="nav-item"><a class="nav-link" href="doctores.html">Gestion doctores</a></li>
+                <li class="nav-item"><a class="nav-link" href="pacientes.html">Gestion pacientes</a></li>
+                <li class="nav-item"><a class="nav-link" href="servicios.html">Gestion servicios</a></li>
+                <li class="nav-item"><form id="cita-form"><button class="btn btn-primary" type="submit">Reservar Cita</button></form></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+    <h1 class="text-center mt-5">Gestión de Doctores</h1>
+
+    <!-- Formulario para agregar un nuevo doctor -->
+    <div class="mt-4">
+        <h4 class="text-center">Agregar un Nuevo Doctor</h4>
+        <form id="agregarDoctorForm" class="doctor-form">
+            <div class="mb-3">
+                <label for="nombre" class="form-label">Nombre del Doctor</label>
+                <input type="text" id="nombre" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label for="especialidad" class="form-label">Especialidad</label>
+                <input type="text" id="especialidad" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label for="anos_experiencia" class="form-label">Años de Experiencia</label>
+                <input type="number" id="anos_experiencia" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label for="foto" class="form-label">Foto (URL)</label>
+                <input type="text" id="foto" class="form-control" required>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Agregar Doctor</button>
+        </form>
+    </div>
+
+    <!-- Lista de doctores -->
+    <h4 class="mt-5">Doctores Disponibles</h4>
+    <div id="doctores-container" class="row"></div>
+</div>
+
+<!-- Footer -->
+<footer class="bg-light py-4">
+    <div class="container text-center">
+        <p class="mb-2">&copy; 2024 Curso Front-End</p>
+    </div>
+</footer>
+
+<script src="lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/doctores.js"></script>
+
+</body>
+</html>

@@ -1,17 +1,56 @@
 [
     {
+    "id":1,
     "nombre": "Toma Muestras",
     "descripcion":"Realizamos análisis de sangre, orina y otros exámenes clínicos de manera rápida y eficiente.",
-    "foto":""
+    "foto":"img/servicio.png"
     },
     {
+    "id":2,
     "nombre": "Urgencia",
     "descripcion": "Atención inmediata en casos de urgencias menores, con cirugía ambulatoria si es necesario",
-    "foto":""
+    "foto":"img/servicio.png"
     },
     {
-    "nombre": "Ambulatorio",
+    "id":3,
+    "nombre": "Cardiologia",
     "descripcion":"Recibe atención médica general con nuestros doctores altamente capacitados.",
-    "foto":""
+    "foto":"img/servicio.png"
+    },
+    {
+    "id":4,
+    "nombre": "Neurología",
+    "descripcion":"Recibe atención médica general con nuestros doctores altamente capacitados.",
+    "foto":"img/servicio.png"
+    },
+    {
+    "id":5,
+    "nombre": "Dermatología",
+    "descripcion":"Recibe atención médica general con nuestros doctores altamente capacitados.",
+    "foto":"img/servicio.png"
+    },
+    {
+    "id":6,
+    "nombre": "Pediatría",
+    "descripcion":"Recibe atención médica general con nuestros doctores altamente capacitados.",
+    "foto":"img/servicio.png"
+    },
+    {
+    "id":7,
+    "nombre": "Traumatología",
+    "descripcion":"Recibe atención médica general con nuestros doctores altamente capacitados.",
+    "foto":"img/servicio.png"
+    },
+    {
+    "id":8,
+    "nombre": "Ginecología",
+    "descripcion":"Recibe atención médica general con nuestros doctores altamente capacitados.",
+    "foto":"img/servicio.png"
+    },
+    {
+    "id":9,
+    "nombre": "Oftalmología",
+    "descripcion":"Recibe atención médica general con nuestros doctores altamente capacitados.",
+    "foto":"img/servicio.png"
     }
   ]

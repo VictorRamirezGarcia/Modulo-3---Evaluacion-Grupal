@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gestión de Citas</title>
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="styles/estilos.css">
+<style>
+    .cita-lista { margin-top: 20px; }
+    .cita-card { margin-bottom: 20px; }
+    .cita-info { margin-top: 10px; font-size: 14px; }
+    .cita-info strong { color: #007bff; }
+    .cita-form { max-width: 500px; margin: 0 auto; padding: 20px; background-color: #f9f9f9; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); }
+</style>
+</head>
+<body>
+
+<!-- Barra de navegación -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+    <div class="container">
+        <a class="navbar-brand" href="#">
+            <img src="img/logitohospital.png" alt="Logotipo del Hospital" width="60" height="60" />
+        </a>
+        <a class="navbar-brand ms-3" href="#">Hospital Clínico Dr. Victor Ramirez</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" href="index2.html">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="equipo2.html">Equipo</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contacto2.html">Contacto</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="citas.html">Gestion Citas</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="doctores.html">Gestion doctores</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="pacientes.html">Gestion pacientes</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="servicios.html">Gestion servicios</a>
+                </li>
+                <li class="nav-item">
+                    <form id="cita-form">
+                        <button class="btn btn-primary" type="submit">Reservar Cita</button>
+                    </form>
+                </li>
+            </ul>
+            <form class="d-flex ms-3">
+                <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Buscar</button>
+            </form>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+  <h1 class="text-center mt-5">Gestión de Citas Médicas</h1>
+
+  <!-- Formulario para agregar una cita -->
+  <div class="mt-4">
+    <h4 class="text-center">Agregar una Nueva Cita</h4>
+    <form id="agregarCitaForm" class="cita-form">
+      <div class="mb-3">
+        <label for="dia" class="form-label">Día</label>
+        <input type="date" id="dia" class="form-control" required>
+      </div>
+      <div class="mb-3">
+        <label for="hora" class="form-label">Hora</label>
+        <input type="time" id="hora" class="form-control" required>
+      </div>
+      <div class="mb-3">
+        <label for="especialidad" class="form-label">Especialidad</label>
+        <!-- <input type="text" id="especialidad" class="form-control" required>-->
+        <select id="especialidad" name="especialidad">
+            <!-- Opciones de especialidad serán cargadas aquí -->
+        </select>
+    </div>
+    <div class="mb-3">
+        <label for="doctor" class="form-label">Doctor</label>
+        <!-- <input type="text" id="doctor" class="form-control" required>-->
+        <select id="doctor" name="doctor">
+            <!-- Opciones de especialidad serán cargadas aquí -->
+        </select>
+    </div>
+    <div class="mb-3"">
+        <label for="paciente" class="form-label">Paciente</label>
+        <select id="paciente" name="paciente" >
+            <!-- Opciones de pacientes se llenarán con JavaScript -->
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary w-100">Agregar Cita</button>
+    </form>
+</div>
+
+<!-- Lista de citas -->
+<h4 class="mt-5">Citas Programadas</h4>
+<!-- <div id="citas-info" class="cita-lista">-->
+    <div id="citas-container" class="row" ></div>
+<!-- </div>-->
+
+<!-- Botones de gestión -->
+<div class="mt-4 text-center">
+    <button id="eliminarCitaBtn" class="btn btn-danger">Eliminar Cita</button>
+    <button id="verCitasBtn" class="btn btn-success">Ver Citas</button>
+</div>
+</div>
+
+<!-- Footer -->
+<footer class="bg-light py-4">
+    <div class="container text-center">
+        <p class="mb-2">&copy; 2024 Curso Front-End</p>
+        <ul class="list-unstyled d-flex justify-content-center mb-0">
+            <li><a class="btn btn-link text-dark" href="/acerca-de">Acerca de</a></li>
+            <li class="mx-3"><a class="btn btn-link text-dark" href="/conectar">Conectar</a></li>
+            <li><a class="btn btn-link text-dark" href="/rrss">Redes Sociales</a></li>
+        </ul>
+    </div>
+</footer>
+
+<script src="lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="JS/citas.js"></script>
+
+</body>
+</html>

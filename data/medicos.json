@@ -1,0 +1,30 @@
+[
+    {
+    "id": 1,
+    "nombre": "Dr. Victor Retamal",
+    "especialidad": "Medicina General",
+    "anos_experiencia": 3,
+    "foto": "img/01.png"
+    },
+    {
+    "id": 2,
+    "nombre": "Dra. Claudia Villagran",
+    "especialidad": "Cardiologia",
+    "anos_experiencia": 5,
+    "foto": "img/02.png"
+    },
+    {
+    "id": 3,
+    "nombre": "Dra. Sofia Saavedra",
+    "especialidad": "Geriatría",
+    "anos_experiencia": 4,
+    "foto": "img/03.png"
+    },
+    {
+    "id": 4,
+    "nombre": "Dra. Karen Alvear",
+    "especialidad": "Pediatria",
+    "anos_experiencia": 8,
+    "foto": "img/04.png"
+    }
+]
