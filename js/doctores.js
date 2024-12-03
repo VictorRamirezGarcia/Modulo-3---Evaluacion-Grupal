@@ -9,17 +9,28 @@ let doctores = "";
 let doctores2 = "";
 let merge = "";
 
+let citas = [];  // Para almacenar las citas
+
 // Función para mostrar los doctores en la página
 async function mostrarDoctores(doctores) {
     doctoresContainer.innerHTML = ''; // Limpiar lista existente
     doctores.forEach((doctor) => {
         const { id, nombre, especialidad, anos_experiencia, foto, valor } = doctor;
-        // Esperamos a obtener la cantidad de citas para cada doctor (resolvemos la promesa)
-        let consDoc = mostrarDoctorConCitas(id);  // Asegúrate de que esto esté esperando correctamente
 
-        // Esto ahora debería ser un número y no una promesa
-        console.log("Doctor " + nombre + " tiene " + consDoc + " consultas.");
-        //console.log("cant doctor citas " + cantDoc);
+        // Filtrar las citas del doctor actual
+        const citasDoctor = citas.filter(cita => cita.doctor === doctor.id);
+        // Número de citas del doctor
+        const consDoc = citasDoctor.length;
+
+        // 1. Función de currying para calcular el costo total de los servicios de un paciente
+        const calcularCostoTotal = (precioConsulta) => (numeroConsultas) => {
+            return precioConsulta * numeroConsultas;
+        };
+
+        const costoConsulta = calcularCostoTotal(valor);
+
+        const costoTotal = costoConsulta(consDoc);
+
         const doctorDiv = document.createElement('div');
         doctorDiv.classList.add('col-md-4');
         doctorDiv.innerHTML = `
@@ -28,7 +39,8 @@ async function mostrarDoctores(doctores) {
                 <div class="card-body">
                     <h5 class="card-title">${nombre}</h5>
                     <h6 class="card-title">Valor Consulta $${valor}</h6>
-                    <h6 class="card-title">Total Consultas $${consDoc}</h6>
+                    <h6 class="card-title">Nº Consultas: ${consDoc}</h6>
+                    <h6 class="card-title">Total Consultas: $${costoTotal}</h6>
                     <p class="doctor-info">Especialidad: <strong>${especialidad}</strong></p>
                     <p class="doctor-info">Años de experiencia: <strong>${anos_experiencia}</strong></p>
                     <button class="btn btn-danger btn-sm" onclick="eliminarDoctor(${id})">Eliminar</button>
@@ -37,24 +49,6 @@ async function mostrarDoctores(doctores) {
         `;
         doctoresContainer.appendChild(doctorDiv);
     });
-}
-
-
-// Función asíncrona para obtener las citas de un doctor
-async function mostrarDoctorConCitas(doctorId) {
-    try {
-        const response = await fetch("../data/citas.json");
-        const citas = await response.json();
-
-        // Filtramos las citas para obtener solo las que corresponden a este doctor
-        const citasDoctor = citas.filter(cita => cita.doctor === doctorId);
-
-        // Retornamos la cantidad de citas
-        return citasDoctor.length;  // Esto ya no es una promesa, es un número
-    } catch (error) {
-        console.error("Error al cargar las citas:", error);
-        return 0; // Si hay un error, retornamos 0 citas
-    }
 }
 
 // Cargar doctores desde el archivo JSON
@@ -70,6 +64,11 @@ async function cargarDoctores() {
         doctores2 = doctoresData2;  // Guardar los doctores cargados en la variable global
 
         merge = [...doctores, ...doctores2];
+
+        // Cargar las citas
+        const responseCitas = await fetch('../data/citas.json');  // Ruta al archivo JSON de citas
+        citas = await responseCitas.json();  // Guardar las citas en la variable global
+
 
         mostrarDoctores(merge); // Mostrar los doctores cargados
         
