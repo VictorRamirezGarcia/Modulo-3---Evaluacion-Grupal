@@ -10,10 +10,16 @@ let doctores2 = "";
 let merge = "";
 
 // Función para mostrar los doctores en la página
-function mostrarDoctores(doctores) {
+async function mostrarDoctores(doctores) {
     doctoresContainer.innerHTML = ''; // Limpiar lista existente
     doctores.forEach((doctor) => {
-        const { id, nombre, especialidad, anos_experiencia, foto } = doctor;
+        const { id, nombre, especialidad, anos_experiencia, foto, valor } = doctor;
+        // Esperamos a obtener la cantidad de citas para cada doctor (resolvemos la promesa)
+        let consDoc = mostrarDoctorConCitas(id);  // Asegúrate de que esto esté esperando correctamente
+
+        // Esto ahora debería ser un número y no una promesa
+        console.log("Doctor " + nombre + " tiene " + consDoc + " consultas.");
+        //console.log("cant doctor citas " + cantDoc);
         const doctorDiv = document.createElement('div');
         doctorDiv.classList.add('col-md-4');
         doctorDiv.innerHTML = `
@@ -21,6 +27,8 @@ function mostrarDoctores(doctores) {
                 <img src="${foto}" class="card-img-top" alt="${nombre}">
                 <div class="card-body">
                     <h5 class="card-title">${nombre}</h5>
+                    <h6 class="card-title">Valor Consulta $${valor}</h6>
+                    <h6 class="card-title">Total Consultas $${consDoc}</h6>
                     <p class="doctor-info">Especialidad: <strong>${especialidad}</strong></p>
                     <p class="doctor-info">Años de experiencia: <strong>${anos_experiencia}</strong></p>
                     <button class="btn btn-danger btn-sm" onclick="eliminarDoctor(${id})">Eliminar</button>
@@ -29,6 +37,24 @@ function mostrarDoctores(doctores) {
         `;
         doctoresContainer.appendChild(doctorDiv);
     });
+}
+
+
+// Función asíncrona para obtener las citas de un doctor
+async function mostrarDoctorConCitas(doctorId) {
+    try {
+        const response = await fetch("../data/citas.json");
+        const citas = await response.json();
+
+        // Filtramos las citas para obtener solo las que corresponden a este doctor
+        const citasDoctor = citas.filter(cita => cita.doctor === doctorId);
+
+        // Retornamos la cantidad de citas
+        return citasDoctor.length;  // Esto ya no es una promesa, es un número
+    } catch (error) {
+        console.error("Error al cargar las citas:", error);
+        return 0; // Si hay un error, retornamos 0 citas
+    }
 }
 
 // Cargar doctores desde el archivo JSON
@@ -56,6 +82,7 @@ async function cargarDoctores() {
 
 // Función para eliminar un doctor por su ID
 function eliminarDoctor(id) {
+    
     const index = doctores.findIndex(doctor => doctor.id === id);  // Buscar el índice del doctor por ID
     if (index !== -1) {
         doctores.splice(index, 1);  // Eliminar doctor del array
@@ -65,6 +92,7 @@ function eliminarDoctor(id) {
         alert('Doctor no encontrado');
     }
 }
+
 
 // Manejar el formulario de agregar doctor
 form.addEventListener('submit', (e) => {
