@@ -1,7 +1,7 @@
-# Taller: Integración de JSON, Estructuras de Datos y Algoritmos en el Sitio Web del Hospital
+# ABPro: Desarrollo Completo del Sistema del Hospital con JavaScript Avanzado
 ## Descripción 
-En este proyecto se implementarán objetos JSON, además, de estructuras avanzadas y algoritmos de búsqueda y ordenamiento, al proyecto titulado “Clínica Chillán”.
-## Objetos JSON y operaciones
+En este proyecto se implementarán objetos JSON, además, de estructuras avanzadas y algoritmos de búsqueda y ordenamiento, al proyecto titulado “Clínica Victor Ramirez”.
+## Descripción de los datos manipulados con JSON y cómo se cargan en la interfaz (Cristian)
 En el archivo data.js ubicado en la carpeta data se crearon dos objetos JSON:
 -	**doctores:** el cual contenía toda la información asociada a los doctores registrados de la clínica, el cual, también cuenta con un objeto anidado como es la información asociada al contacto.
 -	**servicios:** contiene la información asociada a los servicios médicos disponibles ofrecidos por la clínica.
@@ -9,11 +9,11 @@ En base a estos dos objetos JSON, se realizaron las siguientes operaciones en el
 -	**Clonación:**  se realiza una clonación de la información del objeto JSON doctores, el objeto obtenido como resultado de la operación se almacena en la variables clonación.
 -	**Merge:** se realiza una fusión de los objetos JSON doctores y servicios, obteniendo como resultado un objeto que contiene la información de los dos objetos bases la cual se almacena en la variable fusión.
 -	**Recorrido:** en la función listardoctores() se implementa un for que recorre el objeto JSON doctores, el cual, nos permite a acceder a la información de cada doctor registrado en el objeto.
-## Estructuras de datos
+## Algoritmos y estructuras de datos utilizados (Pepa ej explicar la pila y esas cosas)
 -	**Arreglo:** en el archivo array.js se inicializa un arreglo el cual mediante el método push registra los nombres de doctores de la clínica. También se implementan los métodos shift y pop que nos permite eliminar elementos del arreglo en la primera y última posición respectivamente y el método buscar que de acuerdo a un nombre entregado como parámetro recorre el arreglo y nos indica si ese nombre se encuentra o no registrado en el arreglo.
 -	**Pila:** en el archivo stack.js se inicializa una pila, con las citas médicas registradas, a la cual se le agregan objetos mediante el método push y se eliminan mediante el método pop.
 -	**Cola:** en el archivo queue se inicializa una cola que simula la entrada de solicitudes a la página de contacto del sitio web, a la cual se le agregan objetos mediante el método push y se eliminan mediante el método shift.
-## Algoritmos 
+## Funciones, clases creadas y manejo de eventos (Lore)
 En el archivo data.js se implementaron dos algoritmos uno que en busca en el objeto doctor si se encuentra registrado el doctor con el nombre indicado por parámetro, y otro que ordena el objeto doctores de acuerdo a los años de experiencia (ascendente).
 -	**Complejidad algoritmo de búsqueda:** Este algoritmo cuenta con una complejidad lineal O(n), ya que recorre cada elemento del objeto hasta encontrar una coincidencia.
 -	**Complejidad algoritmo de ordenamiento:** Este algoritmo busca el doctor con menos años de experiencia, luego lo intercambia con el primer elemento del objeto no ordenado, de esta forma crea dos sublistas una con los objetos ordenados y otra con los elementos por ordenar. De acuerdo a este comportamiento su complejidad es exponencial O(n^2).
@@ -25,7 +25,7 @@ Para visualizar este proyecto se necesita que previamente cuentes con la instala
   
 Para visualizar este proyecto debes clonar este repositorio, mediante el siguiente comando:
 ```bash
-git clone https://github.com/lorenasotosanmartin/tarea_3
+git clone https://github.com/VictorRamirezGarcia/Modulo-3---Evaluacion-Grupal
 ```
 Luego mediante tu consola (cmd) posicionarte en la carpeta donde alojaste el proyecto y escribir el siguiente comando: 
 ```bash
