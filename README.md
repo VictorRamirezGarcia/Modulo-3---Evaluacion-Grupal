@@ -225,10 +225,56 @@ class ColaCitas {
     }
 ```
 
-## Funciones, clases creadas y manejo de eventos (Lore)
-En el archivo data.js se implementaron dos algoritmos uno que en busca en el objeto doctor si se encuentra registrado el doctor con el nombre indicado por parámetro, y otro que ordena el objeto doctores de acuerdo a los años de experiencia (ascendente).
--	**Complejidad algoritmo de búsqueda:** Este algoritmo cuenta con una complejidad lineal O(n), ya que recorre cada elemento del objeto hasta encontrar una coincidencia.
--	**Complejidad algoritmo de ordenamiento:** Este algoritmo busca el doctor con menos años de experiencia, luego lo intercambia con el primer elemento del objeto no ordenado, de esta forma crea dos sublistas una con los objetos ordenados y otra con los elementos por ordenar. De acuerdo a este comportamiento su complejidad es exponencial O(n^2).
+## Funciones, clases creadas y manejo de eventos 
+-	**Programación funcional:**  en el archivo doctores.js en la función calcularCostoTotal() utiliza currying para  calcular el valor a total a cancelar por un paciente de acuerdo al número de consultas realizadas con un doctor en particular. 
+```javascript
+  // 1. Función de currying para calcular el costo total de los servicios de un paciente
+        const calcularCostoTotal = (precioConsulta) => (numeroConsultas) => {
+            return precioConsulta * numeroConsultas;
+        };
+```
+En el caso de composición de funciones se utiliza en funciones de los archivos citas.js y doctores.js como por ejemplo en la función para crear una nueva cita. 
+-	**clases:** se creó la clase doctor en el archivo clases.js y la subclase pediatra herencia de la clase de doctor, ambas cuentan con funciones asociadas a mostrar su información, calcular costo de consulta, agregar disponibilidad, entre otros. Cabe destacar, que en la clase doctor se utiliza encapsulación mediante setter and getter en el atributo años de experiencia, y en cirujano se utiliza polimorfismo en las funciones.
+```javascript
+  // Clase base Doctor
+class Doctor {
+  constructor(nombre, especialidad, anos_experiencia, tarifaBase) {
+      this.nombre = nombre;
+      this.especialidad = especialidad;
+      this._anos_experiencia = anos_experiencia;
+      this.tarifaBase = tarifaBase;  // Tarifa base de consulta
+      this.disponibilidad = []; // Días en que el doctor está disponible
+  }
+  // Subclase Pediatra
+class Pediatra extends Doctor {
+  constructor(nombre, anos_experiencia, tarifaBase) {
+      super(nombre, "Pediatra", anos_experiencia, tarifaBase);
+  }
+```
+-	**eventos**: Para gestionar las citas de los pacientes en el archivo citas.js se utilizaron event listeners para capturar eventos realizados por los usuarios, como agregar una nueva cita y actualizar la lista de citas.
+  ```javascript
+agregarCitaForm.addEventListener("submit", function(e) {
+        e.preventDefault();
+
+        // Obtener los datos del formulario
+        const dia = document.getElementById("dia").value;
+        const hora = document.getElementById("hora").value;
+        const especialidad = document.getElementById("especialidad").value;
+        const doctor = document.getElementById("doctor").value;
+
+        // Crear una nueva cita con un id único
+        const nuevaCita = { id: Date.now(), dia, hora, especialidad, doctor, estado: 1  };
+
+        // Agregar la nueva cita a la cola
+        colaCitas.agregarCita(nuevaCita);
+
+        // Actualizar la lista de citas
+        actualizarListaCitas();
+
+        // Limpiar el formulario
+        agregarCitaForm.reset();
+    });
+ ```
 ### Visualización del proyecto
 Para visualizar este proyecto se necesita que previamente cuentes con la instalación de:
 - **Git**: [sitio de descarga] (https://git-scm.com/downloads)
