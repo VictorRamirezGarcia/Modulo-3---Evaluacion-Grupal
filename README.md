@@ -21,13 +21,12 @@ En este proyecto se implementarán objetos JSON, además, de estructuras avanzad
 ```
 
 - **Pacientes:** el archivo pacientes.json contiene los detalles de los pacientes registrados en la clínica. Cada paciente tiene información básica que incluye:
-
-- **RUT**: Identificación única del paciente.
-- **Nombre**: Nombre completo del paciente.
-- **Fecha de nacimiento**: Fecha en la que nació el paciente.
-- **Teléfono**: Número de teléfono de contacto del paciente.
-- **Dirección**: Dirección de residencia del paciente.
-- **Correo electrónico**: Correo electrónico de contacto del paciente.
+ - **RUT**: Identificación única del paciente.
+ - **Nombre**: Nombre completo del paciente.
+ - **Fecha de nacimiento**: Fecha en la que nació el paciente.
+ - **Teléfono**: Número de teléfono de contacto del paciente.
+ - **Dirección**: Dirección de residencia del paciente.
+ - **Correo electrónico**: Correo electrónico de contacto del paciente.
 
 ```json
 [
@@ -60,11 +59,10 @@ En este proyecto se implementarán objetos JSON, además, de estructuras avanzad
 ```
 
 - **Servicios Médicos:** el archivo servicios.json, describe los servicios médicos que la clínica ofrece a sus pacientes. Cada servicio tiene la siguiente información:
-
-- **id**: Identificador único del servicio.
-- **nombre**: Nombre del servicio médico.
-- **descripcion**: Descripción detallada de lo que incluye el servicio.
-- **foto**: Ruta de la imagen asociada al servicio.
+ - **id**: Identificador único del servicio.
+ - **nombre**: Nombre del servicio médico.
+ - **descripcion**: Descripción detallada de lo que incluye el servicio.
+ - **foto**: Ruta de la imagen asociada al servicio.
 
 ```json
 [
