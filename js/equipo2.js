@@ -92,7 +92,7 @@ function buscarPorEspecialidad(especialidadBuscada) {
 function ordenarPorAniosExperiencia() {
   //limpiar el listado de equipos medicos cargado en la pagina
   //limpiarEquipoMedico();
-  doctorInfoContainer.innerHTML = '';
+  //doctorInfoContainer.innerHTML = '';
   // Usar los doctores filtrados si existen, o los doctores completos
   const doctoresAOrdenar = doctoresFiltrados.length > 0 ? doctoresFiltrados : merge;
   // Ordenar los doctores por años de experiencia
