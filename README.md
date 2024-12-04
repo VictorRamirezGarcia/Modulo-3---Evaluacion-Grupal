@@ -5,11 +5,8 @@ En este proyecto se implementarán objetos JSON, además, de estructuras avanzad
 
 ## Estructura de los Archivos JSON
 
-### 1. **Médicos (medicos.json)**
+- **Médicos:** el archivo medicos.json contiene la información básica de los médicos disponibles en la clínica. Cada médico tiene un identificador único, su nombre, especialidad, años de experiencia y una foto asociada.
 
-Contiene la información básica de los médicos disponibles en la clínica. Cada médico tiene un identificador único, su nombre, especialidad, años de experiencia y una foto asociada.
-
-#### Ejemplo:
 ```json
 [
   {
@@ -23,9 +20,7 @@ Contiene la información básica de los médicos disponibles en la clínica. Cad
 ]
 ```
 
-## 2. Pacientes (pacientes.json)
-
-Este archivo contiene los detalles de los pacientes registrados en la clínica. Cada paciente tiene información básica que incluye:
+- **Pacientes:** el archivo pacientes.json contiene los detalles de los pacientes registrados en la clínica. Cada paciente tiene información básica que incluye:
 
 - **RUT**: Identificación única del paciente.
 - **Nombre**: Nombre completo del paciente.
@@ -33,8 +28,6 @@ Este archivo contiene los detalles de los pacientes registrados en la clínica. 
 - **Teléfono**: Número de teléfono de contacto del paciente.
 - **Dirección**: Dirección de residencia del paciente.
 - **Correo electrónico**: Correo electrónico de contacto del paciente.
-
-### Ejemplo de contenido de `pacientes.json`:
 
 ```json
 [
@@ -66,16 +59,12 @@ Este archivo contiene los detalles de los pacientes registrados en la clínica. 
 ]
 ```
 
-## 3. Servicios Médicos (servicios.json)
-
-Este archivo describe los servicios médicos que la clínica ofrece a sus pacientes. Cada servicio tiene la siguiente información:
+- **Servicios Médicos:** el archivo servicios.json, describe los servicios médicos que la clínica ofrece a sus pacientes. Cada servicio tiene la siguiente información:
 
 - **id**: Identificador único del servicio.
 - **nombre**: Nombre del servicio médico.
 - **descripcion**: Descripción detallada de lo que incluye el servicio.
 - **foto**: Ruta de la imagen asociada al servicio.
-
-### Ejemplo de contenido de `servicios.json`:
 
 ```json
 [
@@ -136,9 +125,7 @@ Este archivo describe los servicios médicos que la clínica ofrece a sus pacien
 ]
 ```
 
-## Cargar los Servicios Médicos en la Interfaz
-
-Para cargar los servicios médicos en la interfaz de usuario, puedes utilizar JavaScript. A continuación se muestra un ejemplo de cómo hacerlo:
+- **Carga de información en la Interfaz:** una vez cargada la información desde los archivos JSON. esta se muestra de forma dinamica en el sitio web de la clinica. estas funciones se encuentran en los archivos js asociados a citas, doctores y servicios.
 
 ```javascript
 // Función para cargar los servicios
@@ -234,7 +221,7 @@ class ColaCitas {
         };
 ```
 En el caso de composición de funciones se utiliza en funciones de los archivos citas.js y doctores.js como por ejemplo en la función para crear una nueva cita. 
--	**clases:** se creó la clase doctor en el archivo clases.js y la subclase pediatra herencia de la clase de doctor, ambas cuentan con funciones asociadas a mostrar su información, calcular costo de consulta, agregar disponibilidad, entre otros. Cabe destacar, que en la clase doctor se utiliza encapsulación mediante setter and getter en el atributo años de experiencia, y en cirujano se utiliza polimorfismo en las funciones.
+-	**clases:** se crea la clase doctor en el archivo clases.js y la subclase pediatra, herencia de la clase de doctor, ambas cuentan con funciones asociadas a mostrar su información, calcular costo de consulta, agregar disponibilidad, entre otros. Cabe destacar, que en la clase doctor se utiliza encapsulación mediante setter and getter en el atributo años de experiencia, y en cirujano se utiliza polimorfismo en las funciones.
 ```javascript
   // Clase base Doctor
 class Doctor {
