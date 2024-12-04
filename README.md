@@ -59,10 +59,10 @@ En este proyecto se implementarán objetos JSON, además, de estructuras avanzad
 ```
 
 - **Servicios Médicos:** el archivo servicios.json, describe los servicios médicos que la clínica ofrece a sus pacientes. Cada servicio tiene la siguiente información:
- - **id**: Identificador único del servicio.
- - **nombre**: Nombre del servicio médico.
- - **descripcion**: Descripción detallada de lo que incluye el servicio.
- - **foto**: Ruta de la imagen asociada al servicio.
+  - **id**: Identificador único del servicio.
+  - **nombre**: Nombre del servicio médico.
+  - **descripcion**: Descripción detallada de lo que incluye el servicio.
+  - **foto**: Ruta de la imagen asociada al servicio.
 
 ```json
 [
