@@ -177,10 +177,51 @@ window.onload = cargarServicios;
 
 Este código asegura que los servicios médicos se carguen correctamente en la interfaz y se muestren de manera dinámica en la página web.
 
-## Algoritmos y estructuras de datos utilizados (Pepa ej explicar la pila y esas cosas)
--	**Arreglo:** en el archivo array.js se inicializa un arreglo el cual mediante el método push registra los nombres de doctores de la clínica. También se implementan los métodos shift y pop que nos permite eliminar elementos del arreglo en la primera y última posición respectivamente y el método buscar que de acuerdo a un nombre entregado como parámetro recorre el arreglo y nos indica si ese nombre se encuentra o no registrado en el arreglo.
--	**Pila:** en el archivo stack.js se inicializa una pila, con las citas médicas registradas, a la cual se le agregan objetos mediante el método push y se eliminan mediante el método pop.
--	**Cola:** en el archivo queue se inicializa una cola que simula la entrada de solicitudes a la página de contacto del sitio web, a la cual se le agregan objetos mediante el método push y se eliminan mediante el método shift.
+## Algoritmos y estructuras de datos utilizados
+
+-	**Búsqueda por especialidad:** en el archivo equipo2.js se crea la función buscarPorEspecialidad donde se realiza la búsqueda por especialidad utilizando include con lowerCase para posteriormente cargar los resultados.
+
+```javascript
+function buscarPorEspecialidad(especialidadBuscada) {
+  const resultados = merge.filter(doctor => {
+    const doctorInfoContainer = document.getElementById("doctor-info");
+    return doctor.especialidad.toLowerCase().includes(especialidadBuscada.toLowerCase());
+  });
+  // Guardar los doctores filtrados en la variable global
+  doctoresFiltrados = resultados;
+  // Mostrar los resultados en consola
+  console.log("Resultados de búsqueda por especialidad:", resultados);
+  // Llamar a la función que carga los resultados (puedes adaptarlo para mostrarlo en la página)
+  cargarEquipoMedico(resultados);
+}
+  
+-	**Ordenamiento por años de experiencia:** en el archivo equipo2.js se crea la función ordenarPorAniosExperiencia, en esta se decide ordenar los doctores de menor a mayor.
+
+```javascript
+function ordenarPorAniosExperiencia() {
+    const doctoresAOrdenar = doctoresFiltrados.length > 0 ? doctoresFiltrados : merge;
+  // Ordenar los doctores por años de experiencia
+  const doctoresOrdenados = doctoresAOrdenar.concat(doctores2).sort((a, b) => a.anos_experiencia - b.anos_experiencia);
+
+-	**Cola:** en el archivo citas.js hay una cola para almacenar las citas, porsteriormente se agregan objetos bajo el método push, para eliminar se utiliza el método shift.
+
+```javascript
+// Cola para almacenar citas
+class ColaCitas {
+    constructor() {
+        this.citas = [];
+    }
+
+    // Agregar una cita a la cola
+    agregarCita(cita) {
+        this.citas.push(cita); // insertar al final (FIFO)
+    }
+
+    // Eliminar la cita más antigua (es decir, la más próxima)
+    eliminarCita() {
+        return this.citas.shift(); // elimina el primer elemento (FIFO)
+    }
+
 ## Funciones, clases creadas y manejo de eventos (Lore)
 En el archivo data.js se implementaron dos algoritmos uno que en busca en el objeto doctor si se encuentra registrado el doctor con el nombre indicado por parámetro, y otro que ordena el objeto doctores de acuerdo a los años de experiencia (ascendente).
 -	**Complejidad algoritmo de búsqueda:** Este algoritmo cuenta con una complejidad lineal O(n), ya que recorre cada elemento del objeto hasta encontrar una coincidencia.
