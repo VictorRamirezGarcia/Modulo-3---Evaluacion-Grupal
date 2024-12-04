@@ -2,13 +2,181 @@
 ## Descripción 
 En este proyecto se implementarán objetos JSON, además, de estructuras avanzadas y algoritmos de búsqueda y ordenamiento, al proyecto titulado “Clínica Victor Ramirez”.
 ## Descripción de los datos manipulados con JSON y cómo se cargan en la interfaz (Cristian)
-En el archivo data.js ubicado en la carpeta data se crearon dos objetos JSON:
--	**doctores:** el cual contenía toda la información asociada a los doctores registrados de la clínica, el cual, también cuenta con un objeto anidado como es la información asociada al contacto.
--	**servicios:** contiene la información asociada a los servicios médicos disponibles ofrecidos por la clínica.
-En base a estos dos objetos JSON, se realizaron las siguientes operaciones en el mismo archivo data.js:
--	**Clonación:**  se realiza una clonación de la información del objeto JSON doctores, el objeto obtenido como resultado de la operación se almacena en la variables clonación.
--	**Merge:** se realiza una fusión de los objetos JSON doctores y servicios, obteniendo como resultado un objeto que contiene la información de los dos objetos bases la cual se almacena en la variable fusión.
--	**Recorrido:** en la función listardoctores() se implementa un for que recorre el objeto JSON doctores, el cual, nos permite a acceder a la información de cada doctor registrado en el objeto.
+
+## Estructura de los Archivos JSON
+
+### 1. **Médicos (medicos.json)**
+
+Contiene la información básica de los médicos disponibles en la clínica. Cada médico tiene un identificador único, su nombre, especialidad, años de experiencia y una foto asociada.
+
+#### Ejemplo:
+```json
+[
+  {
+    "id": 1,
+    "nombre": "Dr. Victor Retamal",
+    "especialidad": "Medicina General",
+    "anos_experiencia": 3,
+    "foto": "img/01.png"
+  },
+  ...
+]
+```
+
+## 2. Pacientes (pacientes.json)
+
+Este archivo contiene los detalles de los pacientes registrados en la clínica. Cada paciente tiene información básica que incluye:
+
+- **RUT**: Identificación única del paciente.
+- **Nombre**: Nombre completo del paciente.
+- **Fecha de nacimiento**: Fecha en la que nació el paciente.
+- **Teléfono**: Número de teléfono de contacto del paciente.
+- **Dirección**: Dirección de residencia del paciente.
+- **Correo electrónico**: Correo electrónico de contacto del paciente.
+
+### Ejemplo de contenido de `pacientes.json`:
+
+```json
+[
+  {
+    "rut": "12.345.678-9",
+    "nombre": "Juan Pérez",
+    "fecha_nacimiento": "1985-05-15",
+    "telefono": "+56912345678",
+    "direccion": "Av. Siempre Viva 123, Santiago",
+    "email": "juanperez@email.com"
+  },
+  {
+    "rut": "23.456.789-0",
+    "nombre": "Maria Gómez",
+    "fecha_nacimiento": "1990-03-22",
+    "telefono": "+56923456789",
+    "direccion": "Calle Falsa 456, Santiago",
+    "email": "mariagomez@email.com"
+  },
+  {
+    "rut": "34.567.890-1",
+    "nombre": "Carlos Fernández",
+    "fecha_nacimiento": "1978-11-30",
+    "telefono": "+56934567890",
+    "direccion": "Plaza Mayor 789, Santiago",
+    "email": "carlosf@email.com"
+  },
+  ...
+]
+```
+
+## 3. Servicios Médicos (servicios.json)
+
+Este archivo describe los servicios médicos que la clínica ofrece a sus pacientes. Cada servicio tiene la siguiente información:
+
+- **id**: Identificador único del servicio.
+- **nombre**: Nombre del servicio médico.
+- **descripcion**: Descripción detallada de lo que incluye el servicio.
+- **foto**: Ruta de la imagen asociada al servicio.
+
+### Ejemplo de contenido de `servicios.json`:
+
+```json
+[
+  {
+    "id": 1,
+    "nombre": "Toma Muestras",
+    "descripcion": "Realizamos análisis de sangre, orina y otros exámenes clínicos de manera rápida y eficiente.",
+    "foto": "img/servicio.png"
+  },
+  {
+    "id": 2,
+    "nombre": "Urgencia",
+    "descripcion": "Atención inmediata en casos de urgencias menores, con cirugía ambulatoria si es necesario.",
+    "foto": "img/servicio.png"
+  },
+  {
+    "id": 3,
+    "nombre": "Cardiologia",
+    "descripcion": "Recibe atención médica general con nuestros doctores altamente capacitados.",
+    "foto": "img/servicio.png"
+  },
+  {
+    "id": 4,
+    "nombre": "Neurología",
+    "descripcion": "Recibe atención médica general con nuestros doctores altamente capacitados.",
+    "foto": "img/servicio.png"
+  },
+  {
+    "id": 5,
+    "nombre": "Dermatología",
+    "descripcion": "Recibe atención médica general con nuestros doctores altamente capacitados.",
+    "foto": "img/servicio.png"
+  },
+  {
+    "id": 6,
+    "nombre": "Pediatría",
+    "descripcion": "Recibe atención médica general con nuestros doctores altamente capacitados.",
+    "foto": "img/servicio.png"
+  },
+  {
+    "id": 7,
+    "nombre": "Traumatología",
+    "descripcion": "Recibe atención médica general con nuestros doctores altamente capacitados.",
+    "foto": "img/servicio.png"
+  },
+  {
+    "id": 8,
+    "nombre": "Ginecología",
+    "descripcion": "Recibe atención médica general con nuestros doctores altamente capacitados.",
+    "foto": "img/servicio.png"
+  },
+  {
+    "id": 9,
+    "nombre": "Oftalmología",
+    "descripcion": "Recibe atención médica general con nuestros doctores altamente capacitados.",
+    "foto": "img/servicio.png"
+  }
+]
+```
+
+## Cargar los Servicios Médicos en la Interfaz
+
+Para cargar los servicios médicos en la interfaz de usuario, puedes utilizar JavaScript. A continuación se muestra un ejemplo de cómo hacerlo:
+
+```javascript
+// Función para cargar los servicios
+function cargarServicios() {
+    fetch('servicios.json')
+    .then(response => response.json())
+    .then(data => {
+        const serviciosContainer = document.getElementById('servicios-lista');
+        
+        data.forEach(servicio => {
+            const servicioDiv = document.createElement('div');
+            servicioDiv.classList.add('servicio');
+            
+            const nombre = document.createElement('h3');
+            nombre.textContent = servicio.nombre;
+            const descripcion = document.createElement('p');
+            descripcion.textContent = servicio.descripcion;
+            const foto = document.createElement('img');
+            foto.src = servicio.foto;
+            foto.alt = servicio.nombre;
+            
+            servicioDiv.appendChild(nombre);
+            servicioDiv.appendChild(descripcion);
+            servicioDiv.appendChild(foto);
+            
+            serviciosContainer.appendChild(servicioDiv);
+        });
+    })
+    .catch(error => console.error('Error al cargar los servicios:', error));
+}
+
+// Llamar la función para cargar los servicios al cargar la página
+window.onload = cargarServicios;
+
+```
+
+Este código asegura que los servicios médicos se carguen correctamente en la interfaz y se muestren de manera dinámica en la página web.
+
 ## Algoritmos y estructuras de datos utilizados (Pepa ej explicar la pila y esas cosas)
 -	**Arreglo:** en el archivo array.js se inicializa un arreglo el cual mediante el método push registra los nombres de doctores de la clínica. También se implementan los métodos shift y pop que nos permite eliminar elementos del arreglo en la primera y última posición respectivamente y el método buscar que de acuerdo a un nombre entregado como parámetro recorre el arreglo y nos indica si ese nombre se encuentra o no registrado en el arreglo.
 -	**Pila:** en el archivo stack.js se inicializa una pila, con las citas médicas registradas, a la cual se le agregan objetos mediante el método push y se eliminan mediante el método pop.
