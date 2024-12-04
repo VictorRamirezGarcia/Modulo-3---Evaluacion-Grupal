@@ -194,6 +194,7 @@ function buscarPorEspecialidad(especialidadBuscada) {
   // Llamar a la función que carga los resultados (puedes adaptarlo para mostrarlo en la página)
   cargarEquipoMedico(resultados);
 }
+...
   
 -	**Ordenamiento por años de experiencia:** en el archivo equipo2.js se crea la función ordenarPorAniosExperiencia, en esta se decide ordenar los doctores de menor a mayor.
 
@@ -202,6 +203,7 @@ function ordenarPorAniosExperiencia() {
     const doctoresAOrdenar = doctoresFiltrados.length > 0 ? doctoresFiltrados : merge;
   // Ordenar los doctores por años de experiencia
   const doctoresOrdenados = doctoresAOrdenar.concat(doctores2).sort((a, b) => a.anos_experiencia - b.anos_experiencia);
+...
 
 -	**Cola:** en el archivo citas.js hay una cola para almacenar las citas, porsteriormente se agregan objetos bajo el método push, para eliminar se utiliza el método shift.
 
@@ -221,6 +223,7 @@ class ColaCitas {
     eliminarCita() {
         return this.citas.shift(); // elimina el primer elemento (FIFO)
     }
+...
 
 ## Funciones, clases creadas y manejo de eventos (Lore)
 En el archivo data.js se implementaron dos algoritmos uno que en busca en el objeto doctor si se encuentra registrado el doctor con el nombre indicado por parámetro, y otro que ordena el objeto doctores de acuerdo a los años de experiencia (ascendente).
